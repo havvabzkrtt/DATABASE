@@ -2,7 +2,7 @@
 
 CSV üzerinden veri çekilmesi gerektiğinde, csv dosyası direkt belleğe alınıp bellek üzerinden dosya içeriği filtrelenmeli. 50 100 kayıt için bu sorun değil fakat daha fazla kayıt olması bellek üzerinde gereksiz yer kaplanmasına neden olur. Bundan dolayı veri tabanı kullanılır. 
 
-![alt text](veri_tabanı.png)
+![alt text](veri_tabanı.PNG)
 
 ### MySQL Kurulumu 
 https://dev.mysql.com/downloads/
@@ -13,29 +13,29 @@ https://dev.mysql.com/downloads/
 - MySQL Installer for Windows : Windows için ikisini aynı anda kurmaya yarar
 
 
-![alt text](mysql_install1.png)
+![alt text](mysql_install1.PNG)
 
 - Custom ile hem server hem de arayüz(Workbench) bilgisayara kurulur.
 
-![alt text](mysql_install2.png)
+![alt text](mysql_install2.PNG)
 - Server ve Workbench için aynı sürümler seçildi.
 
-![alt text](mysql_install3.png)
+![alt text](mysql_install3.PNG)
 - Execute ile kurulum tamamlanır.
 
-![alt text](mysql_install4.png)
+![alt text](mysql_install4.PNG)
 - herhangi bir değişiklik yapılmıyor. port = 3306
 
-![alt text](mysql_install5.png)
-- Root parolası girilmeli ve unutulamalı. Arayüze bu şifre ile giriş yapılır. (havvabzkrt41)
+![alt text](mysql_install5.PNG)
+- Root parolası girilmeli ve unutulamalı. Arayüze bu şifre ile giriş yapılır. 
 
-![alt text](mysql_arayüz.png)
+![alt text](mysql_arayüz.PNG)
 - İlk açılna arayüz.
 
 
 ### Veri Tabanı Oluşturma
 
-![alt text](schema_olusturma.png)
+![alt text](schema_olusturma.PNG)
 - Şema(veri tabanına karşılık gelir) oluşturulur.
 
 
@@ -62,7 +62,7 @@ https://dev.mysql.com/downloads/
 
 - **DROP TABLE shopdb.categories2;** -> Tablo silme scripti
 
-![alt text](server_script.png)
+![alt text](server_script.PNG)
 - Yukarıdaki işlemler (veri tabanını, tabloyu, sütunları oluşturmak) için server a uygulanacak olan script
 
 
@@ -91,7 +91,7 @@ import mysql.connector
 db = mysql.connector.connect(
     host="localhost",      # Localhost veya uzak sunucu adresi
     user="root",           # Kullanıcı adı
-    password="havvabzkrt41",  # Kullanıcı şifresi
+    password="...",  # Kullanıcı şifresi
     database="shopdb"      # Bağlanmak istenen veritabanı
 )
 
@@ -211,7 +211,7 @@ Tüm dosyalar, veritabanı bağlantısını doğru bir şekilde kapatmayı garan
 
 İki tabloyu ilgilendiren join işlemleri gerekebilir.
 
-![alt text](iki_tablo.png)
+![alt text](iki_tablo.PNG)
 
 - **products** adlı tabloya **categoryId** adlı sütun olan **yabancı anahtar** eklenir. Bu yabancı anahtar **categories** adlı tablonun **birincil anhatarına (primary key)** karşılık gelir.
 - Ayrıca bu categoryId sütunu fiziksel olarak bağlanmalıdır. Bu iki tablo arasında kıstılama eklemeye yarar.
@@ -230,10 +230,10 @@ FOREIGN KEY (categoryId) REFERENCES categories(id);
 - "fk_categories_productsbir" adında bir constraint(kısıtlama) eklenir. 
 - Yabancı anahtar ve referans(categories tablosundaki birincil anahtar) verilir.
 
-![alt text](foreign_key.png)
+![alt text](foreign_key.PNG)
 - **products** tablosunda **fk_categories_products** adlı yabancı anahtar görülür.
 
-![alt text](foreign_key_hata.png)
+![alt text](foreign_key_hata.PNG)
 - Eğer **products** tablosunda **categoryId** sütununa "0" değeri girilirse hata alınır çünkü **categories** tablosunda "0" değeri yok.
 
 ```python
@@ -272,7 +272,7 @@ FOREIGN KEY (categoryId) REFERENCES categories(id);
 - Uygulama yoğun kullanıldığı zaman database ile uygulama arasındaki iletişimin performanslı bir hale getirilmesi gerekir. Çünkü uygulama belirli bir yoğunluk altında çalışmaz duruma gelebilir. Bundan dolayı caching işlemi önemlidir.
 - Çok trafik almayan uygulamalarda cachlemeye gerek yok.s
 
-![alt text](memory_caching.png)
+![alt text](memory_caching.PNG)
 
 - Uygulamadan gelen veri **memory(ram)'de** saklanabilir, bir **diskte** saklanabilir veya bir **harici hizmetle(external)** saklanabilir. Biz basit olarak memory üzerinde saklayacağız.
 
