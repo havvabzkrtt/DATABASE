@@ -39,7 +39,7 @@ https://dev.mysql.com/downloads/
 - Şema(veri tabanına karşılık gelir) oluşturulur.
 
 
-![alt text](tablo_olusturma.png)
+![alt text](tablo_olusturma.PNG)
 - **pruducts** adlı bir tablo oluşturulur.
 - Tabloya sütunlar eklenir.
 - **Id** sütunu için:
